@@ -1,0 +1,32 @@
+<div class="container">
+
+<h1>WELCOME TO TASK Manager</h1>
+  
+<form action="" method="post" enctype="application/x-www-form-urlencoded">
+<label for="task">ENTER TASK NAME</label>
+<input type="text" id="task" name="task">
+<button type="submit">CREATE TASK</button>
+<button type="reset">CLEAR TASK</button>
+</form>
+<table cellpadding="20px"
+       cellspacing="20px" border="2px">
+    <tr>
+        <th>TASK</th>
+        <th>EDIT</th>
+        <th>DELETE</th>
+    </tr>
+{{#each data}}
+     <tr>
+        <td><h1>{{task}}</h1></td>
+        <td><a href="/tasks/{{_id}}">EDIT</a></td>
+        <td>
+          <form action="/tasks/{{_id}}?_method=DELETE" method="post" enctype="application/x-www-form-urlencoded">
+          <input type="hidden" name="_method" value="DELETE">
+          <button type="submit">DELETE</button>
+          </form>
+          </td>
+      </tr>
+       {{/each}}
+    </table>
+  </div>
+
