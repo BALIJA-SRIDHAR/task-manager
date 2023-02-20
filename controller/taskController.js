@@ -14,7 +14,7 @@ const createTask = async (req,res)=>{
  const  getTasks = async (req,res)=>{
     let data =await taskModel.find().lean()
     //console.log(data);
-   res.render("home",{data})
+   res.render("home",{data,MSG:"manager"})
 }
 
 
